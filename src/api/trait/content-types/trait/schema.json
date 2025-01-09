@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "trats",
+  "collectionName": "traits",
   "info": {
-    "singularName": "trat",
-    "pluralName": "trats",
-    "displayName": "Trait",
-    "description": ""
+    "singularName": "trait",
+    "pluralName": "traits",
+    "displayName": "Trait"
   },
   "options": {
     "draftAndPublish": true
@@ -19,13 +18,14 @@
       "type": "string"
     },
     "image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images",
-        "files"
-      ]
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }

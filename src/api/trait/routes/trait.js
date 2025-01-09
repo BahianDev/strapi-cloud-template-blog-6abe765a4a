@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * trat router
+ * trait router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::trat.trat');
+module.exports = createCoreRouter('api::trait.trait');

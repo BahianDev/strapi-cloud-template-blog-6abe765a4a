@@ -396,13 +396,12 @@ export interface ApiMemeMeme extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiTratTrat extends Struct.CollectionTypeSchema {
-  collectionName: 'trats';
+export interface ApiTraitTrait extends Struct.CollectionTypeSchema {
+  collectionName: 'traits';
   info: {
-    description: '';
     displayName: 'Trait';
-    pluralName: 'trats';
-    singularName: 'trat';
+    pluralName: 'traits';
+    singularName: 'trait';
   };
   options: {
     draftAndPublish: true;
@@ -411,9 +410,12 @@ export interface ApiTratTrat extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    image: Schema.Attribute.Media<'images' | 'files'>;
+    image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::trat.trat'> &
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::trait.trait'> &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
@@ -934,7 +936,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::meme.meme': ApiMemeMeme;
-      'api::trat.trat': ApiTratTrat;
+      'api::trait.trait': ApiTraitTrait;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

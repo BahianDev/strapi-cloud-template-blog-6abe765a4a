@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * trat controller
+ * trait controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::trat.trat');
+module.exports = createCoreController('api::trait.trait');
